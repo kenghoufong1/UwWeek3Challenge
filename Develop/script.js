@@ -1,25 +1,18 @@
 // // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
+}
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button
+generateBtn.addEventListener("click", generatepassword);
 
-// const button = document.createElement('button')
-// button.innerText = 'Can you click me?'
-// button.addEventListener('click', () => {
-//   alert('Oh, you clicked me!');
-// })
-
-// confirm prompt alert
 
 const upperalphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
@@ -42,7 +35,7 @@ function generatepassword() {
   var numeric = confirm("Do you want numeric in the password?");
 
   var special = confirm("Do you want special characters in the password?");
-  
+
   function gettype(){
     var typesofcharacter = 0 ;
     if(lowercase){
@@ -64,7 +57,20 @@ function generatepassword() {
     alert("Sorry you must pick a type of characters for your password");
   }
 
-console.log(gettype());
+  function allcharacter(){
+    const allcharactertemp = [];
+    if(lowercase){
+      const allcharacters = loweralphabet;
+      console.log(allcharacters);
+    }
+    if(uppercase){
+      const allcharacters = allcharacters.push(upperalphabet);
+      console.log(allcharacters);
+    }
+    return allcharacters;
+  }
+  allcharacter();
+ 
 
   const password =[];
   for (var i = 0 ; i < howmanyletter ; i ++){
@@ -75,4 +81,3 @@ console.log(password);
 
 }
 
-generatepassword();
