@@ -38,7 +38,7 @@ function generatepassword() {
 
   var special = confirm("Do you want special characters in the password?");
 
-  //function gettype
+  //function gettype checks to see if the input has selected a type of character for the password or not
   function gettype(){
     var typesofcharacter = 0 ;
     if(lowercase){
@@ -59,7 +59,7 @@ function generatepassword() {
   if (gettype()=== 0){
     alert("Sorry you must pick a type of characters for your password");
   }
-
+//create an new array that changes depending on what types of character the users pick they want in their password
   var allcharactertemp = [];
   
   if(lowercase){
@@ -76,7 +76,7 @@ function generatepassword() {
   }
 
  
-
+// created a loop that grabs the random character out the array and changed it into a string to print into the card body in the html file
   const password =[];
   for (var i = 0 ; i < howmanyletter ; i ++){
     var temp = (Math.round(Math.random()*allcharactertemp.length));
